@@ -1,3 +1,9 @@
+# Segundo Bimestre Thelman Pabón
+
+<p align="center">
+	<img src="https://i.imgur.com/EJaJ5C2.png" width="100%" height="100%" align="">
+</p>
+
 # Funciones en C++
 
 Las funciones en C++ son bloques de código que realizan una tarea específica y pueden ser llamados desde cualquier parte del programa. Las funciones permiten dividir el código en partes más pequeñas y fáciles de mantener, mejorar la reutilización de código y facilitar la lectura y comprensión del mismo.
