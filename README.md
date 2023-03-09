@@ -4,6 +4,31 @@
 	<img src="https://i.imgur.com/EJaJ5C2.png" width="100%" height="100%" align="">
 </p>
 
+# Archivos de texto en C++
+
+Los archivos de texto contienen datos en formato de texto simple. Podemos abrir un archivo de texto en modo lectura o escritura y podemos leer o escribir texto en él. Aquí hay un ejemplo de cómo leer un archivo de texto:
+
+```cpp
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+  string linea;
+  ifstream archivo("archivo.txt");
+  if (archivo.is_open()) {
+    while (getline(archivo, linea)) {
+      cout << linea << endl;
+    }
+    archivo.close();
+  } else {
+    cout << "No se pudo abrir el archivo" << endl;
+  }
+  return 0;
+}
+
+```
+
 # Funciones en C++
 
 Las funciones en C++ son bloques de código que realizan una tarea específica y pueden ser llamados desde cualquier parte del programa. Las funciones permiten dividir el código en partes más pequeñas y fáciles de mantener, mejorar la reutilización de código y facilitar la lectura y comprensión del mismo.
