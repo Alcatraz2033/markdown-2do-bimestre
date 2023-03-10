@@ -4,6 +4,49 @@
 	<img src="https://i.imgur.com/EJaJ5C2.png" width="100%" height="100%" align="">
 </p>
 
+# El switch en C++
+El switch en C++ se utiliza para ejecutar diferentes bloques de código según el valor de una expresión. Cada bloque de código se define en un caso, y el valor de cada caso se compara con la expresión. Si la expresión coincide con uno de los valores, se ejecuta el bloque de código correspondiente. Si ninguno de los valores coincide, se ejecuta el bloque de código en la sección default.
+
+```cpp
+#include <iostream>
+
+int main() {
+  int puntaje;
+  
+  std::cout << "Ingrese el puntaje obtenido: ";
+  std::cin >> puntaje;
+  
+  switch (puntaje) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      std::cout << "La nota correspondiente es F." << std::endl;
+      break;
+    case 6:
+      std::cout << "La nota correspondiente es D." << std::endl;
+      break;
+    case 7:
+      std::cout << "La nota correspondiente es C." << std::endl;
+      break;
+    case 8:
+      std::cout << "La nota correspondiente es B." << std::endl;
+      break;
+    case 9:
+    case 10:
+      std::cout << "La nota correspondiente es A." << std::endl;
+      break;
+    default:
+      std::cout << "El puntaje ingresado no es válido." << std::endl;
+      break;
+  }
+  
+  return 0;
+}
+```
+
 # Archivos de texto en C++
 
 Los archivos de texto contienen datos en formato de texto simple. Podemos abrir un archivo de texto en modo lectura o escritura y podemos leer o escribir texto en él. Aquí hay un ejemplo de cómo leer un archivo de texto:
@@ -541,3 +584,51 @@ int main() {
 
 
 ```
+
+# Autómatas en C++
+Un autómata finito es una máquina que puede estar en un estado determinado en un momento dado, y que cambia de estado en respuesta a una entrada. En C++, podemos implementar un autómata utilizando un switch y una variable que representa el estado actual de la máquina.
+
+Supongamos que estamos construyendo un autómata que reconoce una cadena de caracteres "ab". Si la cadena contiene "ab" en cualquier parte, la máquina debe aceptarla. De lo contrario, debe rechazarla.
+
+```cpp
+#include <iostream>
+
+int main() {
+  std::string entrada;
+  int estado = 0;
+  int i = 0;
+  
+  std::cout << "Ingrese una cadena: ";
+  std::cin >> entrada;
+  
+  while (entrada[i] != '\0') {
+    switch (estado) {
+      case 0:
+        if (entrada[i] == 'a') {
+          estado = 1;
+        }
+        break;
+      case 1:
+        if (entrada[i] == 'b') {
+          estado = 2;
+        }
+        else if (entrada[i] == 'a') {
+          estado = 1;
+        }
+        else {
+          estado = 0;
+        }
+        break;
+      case 2:
+        std::cout << "La cadena es aceptada." << std::endl;
+        return 0;
+    }
+    i++;
+  }
+  
+  std::cout << "La cadena es rechazada." << std::endl;
+  return 0;
+}
+
+```
+
